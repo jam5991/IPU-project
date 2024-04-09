@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./deployment
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+    environment:
+      - MODEL_DIR=/app/model
